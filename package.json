@@ -1,0 +1,25 @@
+{
+  "name": "payload-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx --watch src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.0",
+    "payload-config": "workspace:*",
+    "qs": "^6.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/qs": "^6.9.18",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "engines": {
+    "node": "^22.13.1"
+  }
+}

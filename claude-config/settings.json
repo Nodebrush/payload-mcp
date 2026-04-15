@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "payload-cms": {
+      "command": "npx",
+      "args": ["tsx", "src/index.ts"],
+      "cwd": "apps/payload-mcp"
+    }
+  }
+}
