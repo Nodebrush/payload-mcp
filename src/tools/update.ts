@@ -9,7 +9,7 @@ export function registerUpdate(server: McpServer, client: PayloadClient) {
     {
       collection: z.string().describe('Collection slug (e.g. "pages", "blog", "menus")'),
       id: z.string().describe('Document ID to update'),
-      data: z.record(z.unknown()).describe('Partial document data — only fields to change'),
+      data: z.record(z.string(), z.unknown()).describe('Partial document data — only fields to change'),
       locale: z.string().optional().describe('Locale for localized fields (e.g. "en", "sv"). Defaults to "en".'),
     },
     async ({ collection, id, data, locale }) => {

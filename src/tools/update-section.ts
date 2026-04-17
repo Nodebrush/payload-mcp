@@ -10,7 +10,7 @@ export function registerUpdateSection(server: McpServer, client: PayloadClient) 
       page_id: z.string().describe('Page document ID'),
       section_index: z.number().optional().describe('0-based index of the section to update'),
       section_id: z.string().optional().describe('The sectionId field value to match (alternative to section_index)'),
-      data: z.record(z.unknown()).describe('Partial section data to merge — only fields to change. Do NOT include blockType.'),
+      data: z.record(z.string(), z.unknown()).describe('Partial section data to merge — only fields to change. Do NOT include blockType.'),
       locale: z.string().optional().describe('Locale for localized fields (e.g. "en", "sv"). Defaults to "en".'),
     },
     async ({ page_id, section_index, section_id, data, locale }) => {
