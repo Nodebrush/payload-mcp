@@ -12,9 +12,10 @@ cp apps/payload-mcp/claude-config/launch.json .claude/launch.json
 Then create `apps/payload-mcp/.env`:
 
 ```
-PAYLOAD_URL=http://localhost:3000
 PAYLOAD_API_KEY=<your-api-key-from-payload-admin>
 ```
+
+The MCP targets `http://localhost:3000` — start the admin with `pnpm --filter payload-admin dev` before using the MCP.
 
 ## After updating the submodule
 

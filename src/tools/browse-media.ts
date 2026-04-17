@@ -58,7 +58,7 @@ Optional filters: search by filename/alt text, change chunk size (images per she
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err)
         return {
-          content: [{ type: 'text', text: `Failed to reach ${url}: ${msg}\n\nMake sure the payload-admin dev server is running (pnpm dev).` }],
+          content: [{ type: 'text', text: `Failed to reach ${url}: ${msg}\n\nThe payload-admin dev server must be running on localhost:3000. Start it with: pnpm --filter payload-admin dev` }],
           isError: true,
         }
       }
