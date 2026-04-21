@@ -60,7 +60,7 @@ export class PayloadClient {
     } = {},
   ): Promise<FindResult> {
     const { where, ...rest } = params
-    const queryParams: Record<string, unknown> = { ...rest }
+    const queryParams: Record<string, unknown> = { draft: true, ...rest }
     if (where) queryParams.where = where
 
     const url = this.buildUrl(`/api/${collection}`, queryParams)
@@ -72,7 +72,8 @@ export class PayloadClient {
     id: string | number,
     params: { locale?: string; depth?: number } = {},
   ): Promise<Record<string, unknown>> {
-    const url = this.buildUrl(`/api/${collection}/${id}`, params as Record<string, unknown>)
+    const queryParams: Record<string, unknown> = { draft: true, ...params }
+    const url = this.buildUrl(`/api/${collection}/${id}`, queryParams)
     return this.request<Record<string, unknown>>(url)
   }
 
@@ -109,7 +110,8 @@ export class PayloadClient {
     slug: string,
     params: { locale?: string; depth?: number } = {},
   ): Promise<Record<string, unknown>> {
-    const url = this.buildUrl(`/api/globals/${slug}`, params as Record<string, unknown>)
+    const queryParams: Record<string, unknown> = { draft: true, ...params }
+    const url = this.buildUrl(`/api/globals/${slug}`, queryParams)
     return this.request<Record<string, unknown>>(url)
   }
 
